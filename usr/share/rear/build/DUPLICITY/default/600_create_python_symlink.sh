@@ -6,7 +6,9 @@
         this_py=${py#./*}   # should be without ./
         case $this_py in
             python) break ;;
-            python2*|python3*) ln -sf $v $this_py python >&2 ;;
+            python2*|python3*) ln -sf $v $this_py python >&2 ;;&
+            python2*) ln -sf $v $this_py python2 >&2 ;;
+            python3*) ln -sf $v $this_py python3 >&2 ;;
         esac
     done
 )
